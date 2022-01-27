@@ -1,0 +1,31 @@
+* {
+	overflow: hidden;
+}
+#login-form {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: -5%;
+}
+
+
+input[type="password"] {
+	margin-bottom: 5px;
+}
+
+#signupAnchor {
+	font-size: 12px;
+	float: right;	
+}
+
+#signupAnchor:hover {
+	color: #666;
+}
+
+#loginButton {
+	width: 100%;
+}
+
