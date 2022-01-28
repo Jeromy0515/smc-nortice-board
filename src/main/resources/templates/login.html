@@ -16,7 +16,7 @@
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="#">Home</a>
+	          <a class="nav-link active" aria-current="page" href="/home">Home</a>
 	        </li>
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,32 +30,40 @@
 	          </ul>
 	        </li>
 	      </ul>
+          <form class="d-flex">
+	      	<a class="nav-link active" aria-current="page" href="/login" style="color:black;">로그인</a>
+	      </form>
 	    </div>
 	  </div>
 	</nav>
 	<!-- navbar -->
 	
 	<!-- login form -->
-	<form action="" id="login-form">
+	<form action="/login" method="post" id="loginForm">
 		<ul>
 			<li>
-				<div class="form-floating mb-3">
-				  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-				  <label for="floatingInput">Student ID</label>
+				<div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput" placeholder="아이디">
+					<label for="floatingInput">아이디</label>
 				</div>
 			</li>
 			<li>
 				<div class="form-floating">
-				  <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
-				  <label for="floatingPassword">Password</label>
+					<input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="비밀번호">
+					<label for="floatingPassword">비밀번호</label>
+					<div class="invalid-feedback">잘못된 비밀번호입니다.</div>
 				</div>
+				
 			</li>
 			<li>
-				<a href="/signup" id="signupAnchor">회원 가입</a>
 			</li>
 			<li>
-				<button type="button" class="btn btn-primary" id="loginButton">로그인</button>
+				<button type="submit" class="btn btn-primary" id="loginButton">로그인</button>
 			</li>
+			<li>
+				<button type="button" class="btn btn-secondary" id="signupButton" onClick="location.href='/signup'">회원가입</button>
+			</li>
+			
 		</ul>
 	</form>
 	<!-- login form -->
