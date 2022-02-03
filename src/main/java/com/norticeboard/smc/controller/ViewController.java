@@ -4,7 +4,10 @@ package com.norticeboard.smc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.norticeboard.smc.model.dto.HealthChecker;
 import com.norticeboard.smc.model.dto.UserDTO;
 
 
@@ -28,5 +31,14 @@ public class ViewController {
 		return "signup";
 		
 	}
+	
+	@ResponseBody
+	@RequestMapping("/health") 
+	public HealthChecker health() {
+		HealthChecker healthChecker = new HealthChecker();
+		healthChecker.setStatus("ok");
+		return healthChecker;
+	}
+		
 	
 }
