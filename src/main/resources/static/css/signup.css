@@ -2,6 +2,7 @@
 	overflow: hidden;
 }
 
+
 nav {
 	z-index: 2;
 }
@@ -17,17 +18,19 @@ nav {
 	z-index: 1;
 }
 
-#overlapCheckButton {
-	position: absolute;
-	top: 50%;
-}
-
 .form-floating {
 	width: 300px;
 	height: 95px;
 }
 
+
 button {
 	width: 100%;	
 	margin-bottom: 5px;
+}
+
+#overlapCheckButton {
+	width: 100px;
+	position: fixed;
+	transform: translate(320%,-125%);
 }

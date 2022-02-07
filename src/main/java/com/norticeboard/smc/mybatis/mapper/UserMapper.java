@@ -10,4 +10,8 @@ public interface UserMapper {
 	
 	public int insertUser(UserDTO userDTO);
 	
+	public UserDTO getUserById(@Param("userId") String userId);
+	
+	public UserDTO login(@Param("userId") String userId,@Param("userPassword") String userPassword);
+	
 }

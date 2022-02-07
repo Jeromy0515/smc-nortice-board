@@ -14,3 +14,7 @@ ul {
 	list-style: none;
 }
 
+.invalid-feedback{
+	font-size: 10px;
+}
+
