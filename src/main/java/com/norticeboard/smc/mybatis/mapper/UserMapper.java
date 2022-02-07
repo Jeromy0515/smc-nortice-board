@@ -14,4 +14,5 @@ public interface UserMapper {
 	
 	public UserDTO login(@Param("userId") String userId,@Param("userPassword") String userPassword);
 	
+	
 }

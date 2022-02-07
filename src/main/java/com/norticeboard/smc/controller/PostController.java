@@ -44,9 +44,11 @@ public class PostController {
 	
 	@PostMapping("/signup")
 	public void signup(@RequestParam Map<String, Object> param) {
+		
 		UserDTO userDTO = new UserDTO(param);
 		userDTO.setUserPassword(passwordEncoder.encode(String.valueOf(param.get("password"))));
 		userMapper.insertUser(userDTO);
+		
 	}
 	
 	@PostMapping("/signup.overlap")
