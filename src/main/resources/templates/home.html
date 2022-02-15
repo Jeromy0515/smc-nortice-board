@@ -73,11 +73,25 @@
 	<!-- table -->
 	<script>
 		var loginAnchor = $("#loginAnchor")
-		
+
 		function loginAnchorAction(){
 			if(loginAnchor.text() == "로그아웃") {
-				//TODO : 인덱스로 가져오는 방법 말고 쿠키 이름으로 가져오는 알고리즘 구현하기
-				document.cookie = document.cookie.split(";")[1] + "; max-age=0";
+				
+				const cookies = document.cookie.split(";")
+				
+				for(let i = 0;i < cookies.length;i++){
+					
+					let cookie = {
+						name: cookies[i].split("=")[0].trim(),
+						value: cookies[i].split("=")[1].trim()
+					}
+					
+					if(cookie.name == "SNB_AT"){
+						document.cookie = cookie.name + "=" + cookie.value + "; max-age=0";						
+						break;
+					}
+				}
+				
 				location.reload()
 			} else if(loginAnchor.text() == "로그인") {
 				location.href = "/auth/login"
