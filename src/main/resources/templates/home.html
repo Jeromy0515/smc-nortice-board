@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="kr">
+<html lang="kr"
+ xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>세명게시판</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/base.css">
-	<script src="js/table.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/base.css">
+	<script src="/js/home.js"></script>
+	<script src="/js/base.js"></script>
 </head>
 <body>
 	<!-- navbar -->
@@ -31,7 +34,7 @@
 	        </li>
 	      </ul>
 	      <form class="d-flex">
-	      	<a class="nav-link active" aria-current="page" href="/login" style="color:black;">로그인</a>
+	      	<a class="nav-link active" id="loginAnchor" th:text="${anchorText}" aria-current="page" href="javascript:loginAnchorAction();" style="color:black;"></a>
 	        <input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
 	        <button class="btn btn-outline-success" type="submit">검색</button>
 	      </form>
@@ -68,5 +71,19 @@
 		</table>
 	</div>
 	<!-- table -->
+	<script>
+		var loginAnchor = $("#loginAnchor")
+		
+		function loginAnchorAction(){
+			if(loginAnchor.text() == "로그아웃") {
+				//TODO : 인덱스로 가져오는 방법 말고 쿠키 이름으로 가져오는 알고리즘 구현하기
+				document.cookie = document.cookie.split(";")[1] + "; max-age=0";
+				location.reload()
+			} else if(loginAnchor.text() == "로그인") {
+				location.href = "/auth/login"
+			}
+		}		
+	
+	</script>
 </body>
 </html>

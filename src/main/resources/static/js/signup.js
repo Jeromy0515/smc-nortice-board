@@ -7,12 +7,12 @@ function sendUserData() {
 	}
 	
 	$.ajax({
-		url: "/signup",
+		url: "/create_account",
 		data: userData,
 		type: "POST",
 		success: function(data) {
 			console.log(data)
-			location.href = "/login"
+			location.href = "/auth/login"
 		},
 		error: function(error) {
 			console.log(error)
@@ -24,7 +24,7 @@ function sendUserData() {
 function checkOverlap() {
 	
 	$.ajax({
-		url: "/signup.overlap",
+		url: "/create_account/overlap",
 		data: {
 			"id": $("#floatingId").val()
 		},
@@ -37,14 +37,14 @@ function checkOverlap() {
 			
 			if($("#floatingId").val().length < 5) {
 				
-				$("#idInvalidFeedback").text('아이디는 5글자 이상 입력하셔야 합니다.')
+				$("#idInvalidFeedback").text("아이디는 5글자 이상 입력하셔야 합니다.")
 				$("#floatingId").attr("class","form-control is-invalid")
 				
 				return
 			}
 			
 			if(isOverlap === 'true'){
-				$("#idInvalidFeedback").text('이미 존재하는 아이디입니다.')
+				$("#idInvalidFeedback").text("이미 존재하는 아이디입니다.")
 				$("#floatingId").attr("class","form-control is-invalid")
 			}else{
 				$("#floatingId").attr("class","form-control is-valid")
@@ -67,7 +67,7 @@ function signup(){
 	
 	if($("#floatingId").attr("class") != "form-control is-valid") {
 		
-		$("#idInvalidFeedback").text('아이디 중복확인을 하셔야합니다.')
+		$("#idInvalidFeedback").text("아이디 중복확인을 하셔야합니다.")
 		$("#floatingId").attr("class","form-control is-invalid")
 		
 		return
@@ -75,7 +75,7 @@ function signup(){
 	
 	if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
 		
-		$("#passwordInvalidFeedback").text('최소 8자 이상, 하나 이상의 문자 및 숫자가 포함되어야 합니다.')
+		$("#passwordInvalidFeedback").text("최소 8자 이상, 하나 이상의 문자 및 숫자가 포함되어야 합니다.")
 		$("#floatingPassword").attr("class","form-control is-invalid")
 		
 		return	

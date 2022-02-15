@@ -10,9 +10,14 @@ import com.norticeboard.smc.mybatis.mapper.UserMapper;
 public class UserService {
 	
 	@Autowired
-	UserMapper userMapper;
+	private UserMapper userMapper;
 	
 	public int insertUser(UserDTO userDTO) {
 		return userMapper.insertUser(userDTO);
 	}
+	
+	public UserDTO getUserById(String userId) {
+		return userMapper.getUserById(userId);
+	}
+	
 }

@@ -1,6 +1,9 @@
 package com.norticeboard.smc.controller;
 
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,16 +18,19 @@ import com.norticeboard.smc.model.dto.UserDTO;
 public class ViewController {
 	
 	@GetMapping("/home")
-	public String home() {
+	public String home(HttpServletRequest request, Model model) {
+		
+		model.addAttribute("anchorText", hasAccessToken(request) ? "로그아웃" : "로그인");
+		
 		return "home";
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/auth/login")
 	public String login() {
 		return "login";
 	}
 	
-	@GetMapping("/signup")
+	@GetMapping("/create_account")
 	public String signup(Model model) {
 		UserDTO userDTO = new UserDTO();
 		model.addAttribute("user", userDTO);
@@ -38,6 +44,22 @@ public class ViewController {
 		HealthChecker healthChecker = new HealthChecker();
 		healthChecker.setStatus("ok");
 		return healthChecker;
+	}
+	
+	
+	
+	private boolean hasAccessToken(HttpServletRequest request) {
+		Cookie[] requestCookies = request.getCookies();
+		
+		if(requestCookies != null) {
+			
+			for(Cookie cookie : requestCookies) {
+				if(cookie.getName().equals("SNB_AT")) 
+					return true;
+			}
+			
+		}
+		return false;
 	}
 		
 	

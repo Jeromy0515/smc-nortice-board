@@ -12,7 +12,4 @@ public interface UserMapper {
 	
 	public UserDTO getUserById(@Param("userId") String userId);
 	
-	public UserDTO login(@Param("userId") String userId,@Param("userPassword") String userPassword);
-	
-	
 }
