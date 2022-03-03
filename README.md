@@ -1,5 +1,5 @@
 # smc-nortice-board
-세명컴퓨터고등학교 게시판 
+Semyung Computer High School Norticeboard
 
-기술 스택
-Java/Spring Boot (Gradle)/Thymeleaf/MyBatis
+## Skill Stack
+Java/Spring Boot(Gradle)/Thymeleaf/MyBatis
