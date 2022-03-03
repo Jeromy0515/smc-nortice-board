@@ -1,0 +1,13 @@
+package com.noticeboard.smc;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SmcNoticeBoardApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SmcNoticeBoardApplication.class, args);
+	}
+
+}

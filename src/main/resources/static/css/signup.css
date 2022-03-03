@@ -1,0 +1,36 @@
+* {
+	overflow: hidden;
+}
+
+
+nav {
+	z-index: 2;
+}
+
+#signupForm {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: -5%;
+	z-index: 1;
+}
+
+.form-floating {
+	width: 300px;
+	height: 95px;
+}
+
+
+button {
+	width: 100%;	
+	margin-bottom: 5px;
+}
+
+#overlapCheckButton {
+	width: 100px;
+	position: fixed;
+	transform: translate(320%,-125%);
+}

@@ -1,0 +1,32 @@
+* {
+	overflow: hidden;
+}
+
+nav {
+	z-index: 2;
+}
+
+#loginForm {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: -5%;
+	z-index: 1;
+}
+
+input[type="password"] {
+	margin-bottom: 5px;
+}
+
+button {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.form-floating {
+	width: 300px;
+	height: 95px;
+}

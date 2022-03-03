@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.noticeboard.smc.mybatis.mapper.UserMapper">
+	
+	<select id="getUserById" resultType="UserDTO">
+		SELECT user_name AS userName, user_id AS userId, user_pw AS userPassword FROM user WHERE user_id LIKE #{userId}
+	</select>
+	
+	<insert id="insertUser">
+		INSERT INTO user VALUES(#{userId},#{userPassword},#{userName})
+	</insert>
+	
+</mapper>
