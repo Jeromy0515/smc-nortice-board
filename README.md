@@ -1,4 +1,4 @@
-# smc-nortice-board
+# smc-notice-board
 Semyung Computer High School Norticeboard
 
 ## Skill Stack
