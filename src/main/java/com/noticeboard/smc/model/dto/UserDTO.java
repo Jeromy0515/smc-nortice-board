@@ -2,9 +2,6 @@ package com.noticeboard.smc.model.dto;
 
 import java.util.Map;
 
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
 public class UserDTO {
 	
 	private String userName;
