@@ -2,9 +2,7 @@ package com.noticeboard.smc.model.dto;
 
 import java.util.Map;
 
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 public class UserDTO {
 	
 	private String userName;
@@ -47,6 +45,5 @@ public class UserDTO {
 		this.userId = String.valueOf(param.get("id"));
 		this.userPassword = String.valueOf(param.get("password"));
 	}
-	
 	
 }
