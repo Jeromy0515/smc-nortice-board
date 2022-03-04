@@ -7,7 +7,7 @@ function sendUserData() {
 	}
 	
 	$.ajax({
-		url: "/create_account",
+		url: location.origin + "/create_account",
 		data: userData,
 		type: "POST",
 		success: function(data) {
@@ -24,7 +24,7 @@ function sendUserData() {
 function checkOverlap() {
 	
 	$.ajax({
-		url: "/create_account/overlap",
+		url: location.origin + "/create_account/overlap",
 		data: {
 			"id": $("#floatingId").val()
 		},
