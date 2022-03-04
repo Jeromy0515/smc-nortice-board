@@ -6,7 +6,7 @@ function login() {
 	}
 	
 	$.ajax({
-		url: "/auth/login",
+		url: location.origin + "/auth/login",
 		data: userData,
 		type: "POST",
 		success: function(data) {
