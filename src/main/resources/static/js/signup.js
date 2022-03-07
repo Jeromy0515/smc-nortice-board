@@ -73,9 +73,9 @@ function signup(){
 		return
 	}
 	
-	if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
+	if(!/^(?=.*[A-z])(?=.*[^A-z1-9])(?=.*[0-9]).{8,}/.test(password)){
 		
-		$("#passwordInvalidFeedback").text("최소 8자 이상, 하나 이상의 문자 및 숫자가 포함되어야 합니다.")
+		$("#passwordInvalidFeedback").text("8자 이상, 하나 이상의 문자, 숫자, 특수문자가 포함되어야 합니다.")
 		$("#floatingPassword").attr("class","form-control is-invalid")
 		
 		return	
